@@ -1,0 +1,34 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+spring:
+  profiles: aws
+
+eureka.environment: production
+
+eureka:
+  instance:
+    non-secure-port: ${server.port}
+  client:
+    useDnsForFetchingServiceUrls: true
+    eurekaServerDNSName: gr8conf.vpc
+    eurekaServerPort: 8761
+    eurekaServerURLContext: eureka
+    serviceUrl.us-east-1a: http://eureka-1.gr8conf.vpc:${server.port}/eureka/, http://eureka-2.gr8conf.vpc:${server.port}/eureka/
+  server:
+    bindingStrategy: route53
+    route53DomainTTL: 30
+
+
