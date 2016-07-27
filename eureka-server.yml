@@ -23,7 +23,6 @@ server:
   port: 8761
 
 eureka:
-  datacenter: cloud
   environment: production
   instance:
     non-secure-port: ${server.port}
