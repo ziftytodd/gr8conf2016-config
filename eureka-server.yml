@@ -27,6 +27,7 @@ eureka:
   instance:
     non-secure-port: ${server.port}
   client:
+    fetchRegistry: false
     eurekaServerDNSName: gr8conf.vpc
     eurekaServerPort: 8761
     eurekaServerURLContext: eureka
