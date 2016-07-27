@@ -1,9 +1,9 @@
-server:
-  port: 8761
-
 ---
 spring:
   profiles: dev
+
+server:
+  port: 8761
 
 eureka:
   instance:
@@ -19,6 +19,9 @@ eureka:
 spring:
   profiles: aws
 
+server:
+  port: 8761
+
 eureka.environment: production
 
 eureka:
@@ -33,6 +36,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     useDnsForFetchingServiceUrls: true
+    serviceUrl.us-east-1d: http://eureka-1d-1.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-2.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-3.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-4.gr8conf.vpc:${server.port}/eureka/
   server:
     bindingStrategy: route53
     route53DomainTTL: 30
