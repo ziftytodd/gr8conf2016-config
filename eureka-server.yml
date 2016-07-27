@@ -18,6 +18,7 @@ spring:
 eureka.environment: production
 
 eureka:
+  datacenter: cloud
   instance:
     non-secure-port: ${server.port}
   client:
@@ -25,7 +26,9 @@ eureka:
     eurekaServerDNSName: gr8conf.vpc
     eurekaServerPort: 8761
     eurekaServerURLContext: eureka
-    serviceUrl.us-east-1a: http://eureka-1.gr8conf.vpc:${server.port}/eureka/, http://eureka-2.gr8conf.vpc:${server.port}/eureka/
+    regon: us-east-1
+    fetchRegistry: true
+    registerWithEurkea: true
   server:
     bindingStrategy: route53
     route53DomainTTL: 30
