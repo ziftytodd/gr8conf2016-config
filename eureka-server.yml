@@ -22,19 +22,15 @@ spring:
 server:
   port: 8761
 
-eureka.environment: production
-
 eureka:
   datacenter: cloud
+  environment: production
   instance:
     non-secure-port: ${server.port}
   client:
     eurekaServerDNSName: gr8conf.vpc
     eurekaServerPort: 8761
     eurekaServerURLContext: eureka
-    region: us-east-1
-    registerWithEureka: true
-    fetchRegistry: true
     useDnsForFetchingServiceUrls: true
     serviceUrl.us-east-1d: http://eureka-1d-1.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-2.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-3.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-4.gr8conf.vpc:${server.port}/eureka/
   server:
