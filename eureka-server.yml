@@ -22,13 +22,15 @@ spring:
 server:
   port: 8761
 
+logging.level.com.netflix: INFO
+
 eureka:
   environment: production
   instance:
     non-secure-port: ${server.port}
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     eurekaServerDNSName: gr8conf.vpc
     eurekaServerPort: 8761
     eurekaServerURLContext: eureka
