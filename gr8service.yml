@@ -1,2 +1,10 @@
 greeting: Hola
 
+---
+spring:
+  profiles: aws
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+
