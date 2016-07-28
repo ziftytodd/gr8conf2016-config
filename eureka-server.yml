@@ -33,7 +33,6 @@ eureka:
     eurekaServerPort: 8761
     eurekaServerURLContext: eureka
     useDnsForFetchingServiceUrls: true
-    serviceUrl.us-east-1d: http://eureka-1d-1.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-2.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-3.gr8conf.vpc:${server.port}/eureka/, http://eureka-1d-4.gr8conf.vpc:${server.port}/eureka/
   server:
     bindingStrategy: route53
     route53DomainTTL: 30
